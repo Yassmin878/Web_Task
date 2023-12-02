@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src='main.js'></script>
+</head>
+<body>
+    
+  <form  id ="formm">
+    <div class="container">
+    <div id="intro">
+      <h1>Register</h1>
+      </div>
+    
+      <p><b>Please fill in this form to create an account.</b></p>
+      <hr>
+      <label for="fname"><b>First Name</b></label>
+      <input type="text" id="fname" name="firstname" placeholder="Your name.."required>
+  
+      <label for="lname"><b>Last Name</b></label>
+      <input type="text" id="lname" name="lastname" placeholder="Your last name.."required>
+
+      <label for="phone"><b></b>Phone Number</b></label>
+      <input type="text" id="phone" name="phonenuber" placeholder="Your Phone Number.." pattern="^\d{3}-\d{4}-\d{4}$" required>
+    
+      <label for="country"><b>Country</b></label>
+      
+      <select id="select" name="country"  >
+        
+        <option value="egypt">Egypt</option>
+        <option value="palestine">Palestine</option>
+        <option value="turkey">Turkey</option>
+        <option value="saudiarabia">Saudi Arabia</option>
+        <option value="qatar">Qatar</option>
+       
+      </select>
+     
+      <hr>
+  
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Email" name="email" id="email" required>
+      <script>
+      
+        const emailInput = document.getElementById('email');
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+      
+        emailInput.addEventListener('input', function() {
+          if (emailRegex.test(this.value)) {
+            this.setCustomValidity('');
+          } else {
+            this.setCustomValidity('Please enter a valid email address');
+          }
+        });
+      </script>
+  
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+  
+      <label for="psw-repeat"><b>Repeat Password</b></label>
+      <input type="password" placeholder="Repeat Password" name="psw-repeat" id="psw-repeat" required>
+      <hr>
+  
+      <button type="submit" class="registerbtn">Register</button>
+    </div>
+  
+    <div class="container signin">
+      <p>Already have an account?
+         <a href="#">Sign in</a>.</p>
+    </div>
+  </form>
+</body>
+</html>
